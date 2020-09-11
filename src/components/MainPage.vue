@@ -1,9 +1,7 @@
 <template>
   <div class="hello">
     <Menu></Menu>
-    <div class="heading">
-      <h1>{{ msg }}</h1>
-    </div>
+    <router-view></router-view>
     </div>
 </template>
 
@@ -21,7 +19,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="scss">
 
   .heading{
     display: flex;

@@ -1,31 +1,66 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="#">Lorem epsum</a>
+    <a
+        class="navbar-brand"
+        href="#">Lorem epsum
+    </a>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div
+        class="collapse navbar-collapse"
+        id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a
+              class="nav-link"
+              href="#"
+              @click="navigate('home')">Home
+            <span class="sr-only">(current)</span>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a
+              class="nav-link"
+              href="#"
+              @click="navigate('recipe')">Recipes
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Recipies</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a
+              class="nav-link"
+              href="#"
+              @click="navigate('contact')">Contact
+          </a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
     </div>
   </nav>
 </template>
 <script>
   export default {
     name: 'Menu',
+    created() {
+      this.$router.push('/step-one');
+    },
+    methods:{
+      navigate : function(page) {
+        switch (page) {
+          case "home":
+            this.$router.push('/step-one');
+            break;
+          case "recipe":
+            this.$router.push('/step-two');
+            break;
+
+          case "contact":
+            this.$router.push('/step-three');
+            break;
+
+          default:
+            this.$router.push('/step-one');
+            break;
+        }
+
+      }
+    },
   }
 </script>
