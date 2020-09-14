@@ -1,4 +1,4 @@
-const { VueLoaderPlugin } = require('vue-loader');
+const {VueLoaderPlugin} = require('vue-loader');
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -23,6 +23,23 @@ const config = {
   module: {
     rules: [
       {
+        test: /\.svg(\?.*)?$/, // match img.svg and img.svg?param=value
+        use: [
+          'url-loader?url=false', // or file-loader or svg-url-loader
+          'svg-transform-loader'
+        ]
+      },
+      // the url-loader uses DataUrls.
+      // the file-loader emits files.
+      {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: "url-loader?limit=10000&mimetype=application/font-woff"
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: "file-loader"
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
       },
@@ -44,7 +61,7 @@ const config = {
         test: /\.scss$/,
         use: [
           'vue-style-loader',
-          'css-loader',
+          'css-loader?url=false',
           {
             loader: 'sass-loader',
           },
