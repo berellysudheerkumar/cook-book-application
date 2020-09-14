@@ -1,3 +1,14 @@
+/**
+ * Cook book application
+ *
+ *
+ * file
+ * @name routes
+ *
+ * @description
+ * Contains routes to display the content
+ */
+
 
 import Home from "./components/home/HomePage";
 import Recipe from "./components/recipes/RecipesPage";

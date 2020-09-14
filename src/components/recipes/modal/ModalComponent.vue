@@ -85,12 +85,19 @@
       EventBus.$emit('toggle');
       },
       saveRecipe: function () {
-        let newRecipe = new Recipe(this.recipe.name,
-            this.recipe.preparationTime,
-            this.recipe.ingredients,
-            this.recipe.directions,
-            this.recipe.author);
-       recipeDetailsStore.add(newRecipe);
+        let position = recipeDetailsStore.state.recipesList.map( x => {return x.name}).indexOf(this.recipe.name);
+        if(position >=0){
+          console.log("inside existing recipe")
+          recipeDetailsStore.state.recipesList[position] = this.recipe;
+        }else{
+          console.log("inside new recipe")
+          let newRecipe = new Recipe(this.recipe.name,
+              this.recipe.preparationTime,
+              this.recipe.ingredients,
+              this.recipe.directions,
+              this.recipe.author);
+          recipeDetailsStore.add(newRecipe);
+        }
         this.closeModal();
       }
     }

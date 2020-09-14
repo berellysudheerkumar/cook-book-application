@@ -1,3 +1,15 @@
+/**
+ * Cook book application
+ *
+ *
+ * file
+ * @name main
+ *
+ * @description
+ * Bootstrap file
+ * Contains parent component to load bootstrap , font-awesome
+ */
+
 import Vue from 'vue';
 import App from './App.vue';
 import 'bootstrap/dist/css/bootstrap.min.css';

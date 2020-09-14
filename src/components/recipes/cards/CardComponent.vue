@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="card" v-for="(recipe , index ) in cardsInfo" :key="index">
-     <span @click="openRecipe(index)">edit</span>
+     <span class="card__edit" @click="openRecipe(index)"></span>
       <a v-bind:href="recipe.link" target="_blank">
         <h1>{{ recipe.name }}</h1>
-        <h4>{{recipe.description}}</h4>
+        <h4>{{recipe.directions}}</h4>
         <small>posted by: {{ recipe.author }}</small>
       </a>
     </div>
@@ -38,6 +38,15 @@
     box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
     margin-top: 1rem;
     transition: .15s all ease-in-out;
+
+    &__edit{
+      cursor: pointer;
+      height: 3rem;
+      background-size: 1.5rem;
+      background-repeat: no-repeat;
+      background-position: 98%;
+      background-image: url('../../../assets/edit.svg');
+    }
 
     &:hover {
       transform: scale(1.05);

@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
+  <div class="container p-4">
     <div class="heading float-left">
       <h1 class="float-left">Recipe page</h1>
     </div>
     <div class="createRecipe float-right">
-      <button type="button" class="btn btn-primary float-right" @click="toggleModal">create</button>
+      <button type="button" class="btn btn-primary float-right" @click="createRecipe">create</button>
       <modal-component v-if="isOpen" :recipe-lists="editRecipe"></modal-component>
     </div>
 
@@ -58,6 +58,10 @@
       },
       editDetails: function (index) {
         this.editRecipe = recipeDetailsStore.state.recipesList[index];
+      },
+      createRecipe: function () {
+        this.editRecipe = {};
+        this.toggleModal();
       }
     },
     computed: {

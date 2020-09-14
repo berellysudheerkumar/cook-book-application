@@ -1,3 +1,14 @@
+/**
+ * Cook book application
+ *
+ *
+ * file
+ * @name recipeDetailsStore
+ *
+ * @description
+ * Contains recipeList data and show modal functions
+ */
+
 import Recipe from "../../../classes/RecipeClass";
 
 export const recipeDetailsStore = {
@@ -6,9 +17,9 @@ export const recipeDetailsStore = {
       new Recipe(
           'Aloo gobi',
           '20 Minutes',
-          'Chris',
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu vulputate leo. Pellentesque mauris erat, faucibus sed libero eu, pharetra facilisis nisi. Nam id mauris efficitur, sollicitudin ex eget, ultrices neque. Sed vel velit fermentum, accumsan leo in, facilisis lacus. Nunc at posuere risus. Morbi quis euismod nulla, in hendrerit augue. In dictum felis vel massa pharetra, eget varius lectus rutrum. Duis vulputate felis velit, ac fermentum purus ultricies nec. Praesent scelerisque turpis dui, ac sodales risus accumsan id. Pellentesque orci massa, gravida sed lacus id, vulputate consectetur lacus. Vivamus blandit odio vitae nisi egestas, nec ornare felis lobortis. Nam vel lacus diam. Nam dictum dui et lobortis volutpat. Quisque magna sem, mollis eu nisi in, ornare vehicula massa. Etiam tortor justo, finibus nec orci non, sodales rhoncus felis.'
-      ),
+          'potato , cauliflower',
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu vulputate leo. Pellentesque mauris erat, faucibus sed libero eu, pharetra facilisis nisi. Nam id mauris efficitur, sollicitudin ex eget, ultrices neque. Sed vel velit fermentum, accumsan leo in, facilisis lacus. Nunc at posuere risus. Morbi quis euismod nulla, in hendrerit augue. In dictum felis vel massa pharetra, eget varius lectus rutrum. Duis vulputate felis velit, ac fermentum purus ultricies nec. Praesent scelerisque turpis dui, ac sodales risus accumsan id. Pellentesque orci massa, gravida sed lacus id, vulputate consectetur lacus. Vivamus blandit odio vitae nisi egestas, nec ornare felis lobortis. Nam vel lacus diam. Nam dictum dui et lobortis volutpat. Quisque magna sem, mollis eu nisi in, ornare vehicula massa. Etiam tortor justo, finibus nec orci non, sodales rhoncus felis.',
+          'chris'),
       new Recipe(
           'Aloo tikki',
           '30 Minutes',
