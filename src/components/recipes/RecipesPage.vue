@@ -5,12 +5,12 @@
     </div>
     <div class="createRecipe float-right">
       <button type="button" class="btn btn-primary float-right" @click="createRecipe">create</button>
-      <modal-component v-if="isOpen" :recipe-lists="editRecipe"></modal-component>
+      <modal-component v-if="isOpen"  :read-only-mode="readOnly" :edit-mode="editMode" :recipe-lists="editRecipe"></modal-component>
     </div>
 
     <div class="row col-sm-12">
       <input
-          class=""
+          class="search"
           type="text"
           placeholder="Search"
           aria-label="Search"
@@ -22,7 +22,6 @@
   </div>
 </template>
 <script>
-  // import Recipe from '../../classes/RecipeClass';
   import CardComponent from "./cards/CardComponent";
   import ModalComponent from "./modal/ModalComponent";
   import {recipeDetailsStore} from './store/RecipeStore'
@@ -38,10 +37,18 @@
       EventBus.$on('toggle', () => {
         this.toggleModal();
       });
+      EventBus.$on('readRecipe', (index) => {
+        this.toggleModal();
+        this.editDetails(index);
+        this.readOnly = true;
+        this.editMode = false;
+      });
     },
     mounted() {
       EventBus.$on('editRecipe', (index) => {
          this.editDetails(index);
+         this.editMode = true;
+         this.readOnly = false;
       });
     },
     data() {
@@ -49,7 +56,9 @@
         search: '',
         isOpen: false,
         editRecipe: [],
-        recipeList: recipeDetailsStore.state.recipesList
+        recipeList: recipeDetailsStore.state.recipesList,
+        editMode:false,
+        readOnly:false
       }
     },
     methods: {
@@ -73,32 +82,3 @@
     }
   }
 </script>
-<style lang="scss">
-
-  .createRecipe {
-    display: inline-flex;
-  }
-
-  input[type=text] {
-    width: 20rem;
-    border: 0;
-    border-bottom: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    background-size: 1.5rem;
-    background-image: url('../../assets/search.svg');
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-  }
-
-  textarea:focus, input:focus {
-    outline: none;
-    width: 100%;
-    border-bottom: 2px solid #11998e;
-  }
-
-</style>

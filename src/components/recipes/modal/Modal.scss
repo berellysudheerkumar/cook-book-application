@@ -1,0 +1,157 @@
+.recipe {
+  &__name{
+    text-align: left;
+  }
+}
+.recipe-readOnly{
+  &__text {
+    padding-bottom:1rem;
+    display: flex;
+    text-align: justify;
+    top: 50%;
+    left: 50%;
+  }
+  &__left{
+    text-align: right;
+  }
+
+}
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid $gray;
+  outline: 0;
+  font-size: 1.3rem;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: $gray;
+}
+
+.form__field:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $primary;
+    font-weight:700;
+  }
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, $primary,$secondary);
+  border-image-slice: 1;
+}
+/* reset input */
+.form__field{
+  &:required,&:invalid { box-shadow:none; }
+}
+.submit-modal{
+  &__close{
+    float: right;
+    cursor: pointer;
+  }
+  &__background{
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(34, 34, 34, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+  }
+
+  &__background::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__background {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  &__modal{
+    padding: 2rem;
+    margin: 0.5rem;
+    background: white;
+    width: 37.5rem;
+    z-index: 50;
+
+
+    &__header{
+      display: flex;
+      position: relative;
+
+      &__title{
+        font-size: 2rem;
+        line-height: 1.25;
+        color: #00716b;
+        padding-right: 2rem;
+
+      }
+
+      &__close{
+        height: 1.5rem;
+        width: 1.5rem;
+        filter: invert(44%) sepia(0%) saturate(13%) hue-rotate(263deg) brightness(93%) contrast(108%);
+        position: absolute;
+        top: 0.5rem;
+        right: 0;
+
+        &:hover{
+          cursor:pointer;
+        }
+      }
+    }
+
+    &__body{
+      margin-bottom: 1.5rem;
+    }
+
+    &__button-bar{
+      margin: 0 -1.5rem -1.5rem -1.5rem;
+      padding: 1rem;
+      background-color: #f2f7f7;
+      text-align: right;
+
+      &__button{
+        &:first-child{
+          margin-right: 1rem;
+        }
+
+      }
+    }
+  }
+}

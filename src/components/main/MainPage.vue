@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import Menu from "./menu-bar/Menu";
+  import Menu from "../menu-bar/Menu";
 export default {
   name: 'MainPage',
   components: {
@@ -20,11 +20,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
-  .heading{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20rem;
-  }
 </style>

@@ -58,13 +58,12 @@ const config = {
         include: [path.join(__dirname, 'src')],
       },
       {
-        test: /\.scss$/,
+        test: /\.s[ac]ss$/,
         use: [
           'vue-style-loader',
-          'css-loader?url=false',
-          {
-            loader: 'sass-loader',
-          },
+          'css-loader',
+          'resolve-url-loader',
+          'sass-loader?sourceMap',
         ],
       },
     ],

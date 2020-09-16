@@ -1,0 +1,11 @@
+/**
+  * Custom style for the page can be added to this scss file.
+  * This file imports the variables and functions if necessary.
+*/
+
+@import "variables";
+@import 'src/components/main/Main';
+@import "src/components/recipes/Recipe";
+@import "src/components/menu-bar/Menu";
+@import "src/components/recipes/cards/Card";
+@import "src/components/recipes/modal/Modal";
