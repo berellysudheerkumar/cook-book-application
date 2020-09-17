@@ -1,0 +1,70 @@
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+
+//form field css
+
+.form__group {
+  position: relative;
+  padding: 0.9375rem 0 0;
+  margin-top: 0.625rem;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 0.125rem solid $gray;
+  outline: 0;
+  font-size: 1.3rem;
+  padding: 0.4375rem 0;
+  background: transparent;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 1.25rem;
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: $gray;
+}
+
+.form__field:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    font-size: 1rem;
+    font-weight:700;
+  }
+}
+/* reset input */
+.form__field{
+  &:required,&:invalid { box-shadow:none; }
+}

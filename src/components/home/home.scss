@@ -1,0 +1,16 @@
+.home {
+  height: auto;
+  position: relative;
+  animation: myfirst 3s 1;
+  animation-direction: normal;
+}
+
+.home::-webkit-scrollbar {
+  display: none;
+}
+
+
+@keyframes myfirst {
+  0%   {background: transparent; left: 0; top: 200px;}
+  100% {background: transparent; left: 0; top: 0;}
+}

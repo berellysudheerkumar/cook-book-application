@@ -1,14 +1,35 @@
+
+
+@media screen and (max-width: 725px) {
+  .card{
+    min-width: 100%;
+    margin-left: 0 !important;
+  }
+}
+
 .card {
+  width: 45%;
+  float: left;
   box-shadow: rgba(0, 0, 0, 0.117647) 0 1px 6px, rgba(0, 0, 0, 0.117647) 0 1px 4px;
   margin-top: 1rem;
-  transition: .15s all ease-in-out;
+  margin-left: 2rem;
+  border-radius: 10px;
 
-  &__description{
+  img {
+    margin:auto;
+    border-radius: 0 0 10px 10px;
+  }
+
+  &__description {
     cursor: pointer;
     color: black;
   }
 
-  &__edit{
+  &__directions{
+    text-align: justify;
+  }
+
+  &__edit {
     cursor: pointer;
     height: 3rem;
     background-size: 1.5rem;
@@ -17,27 +38,75 @@
     background-image: url('~@/assets/edit.svg');
   }
 
-  &:hover {
-    transform: scale(1.05);
-  }
+}
 
-  a:hover{
-    color: black;
-  }
+h1, p {
+  margin: 0;
+  padding: 0 0 .5em;
+}
 
-  a {
-    text-decoration: none;
-    padding: 12px;
-    font-size: 24px;
-    align-items: center;
+.container {
+  margin-top: 1rem;
+  transition: .15s all ease-in-out;
+}
 
-    img {
-      height: 100px;
-    }
 
-    small {
-      font-size: 10px;
-      padding: 4px;
-    }
-  }
+.caption {
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.caption::before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: transparent;
+  transition: background .35s ease-out;
+}
+
+.caption:hover::before {
+  background: rgba(0, 0, 0, .5);
+}
+
+.caption__media {
+  display: block;
+  min-width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.caption__overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  color: white;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  transition: -webkit-transform .35s ease-out;
+  transition:         transform .35s ease-out;
+}
+
+.caption:hover .caption__overlay {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.caption__overlay__title {
+  -webkit-transform: translateY( -webkit-calc(-100% - 10px) );
+  transform: translateY( calc(-100% - 10px) );
+  transition: -webkit-transform .35s ease-out;
+  transition:         transform .35s ease-out;
+}
+
+.caption:hover .caption__overlay__title {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
 }
