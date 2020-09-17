@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card" v-for="(recipe , index ) in cardsInfo" :key="index">
-     <span class="card__edit" @click="editRecipe(index)"></span>
+      <span class="card__edit" @click="editRecipe(index)"><i class="far fa-edit"></i></span>
       <div @click="showRecipe(index)" class="caption">
         <img v-if="recipe.url===undefined" class="caption__media" :src="defaultImage"/>
         <img v-else class="caption__media" :src="recipe.url">
