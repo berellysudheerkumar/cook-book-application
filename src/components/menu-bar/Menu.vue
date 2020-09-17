@@ -1,8 +1,8 @@
 <template>
-  <div class="icon-bar">
-    <a href="#"  @click="navigate('home')"><i class="fa fa-fw fa-home"></i><span>Home</span></a>
-    <a href="#" @click="navigate('recipe')"><i class="fas fa-hamburger"></i><span>Recipe</span></a>
-    <a href="#" @click="navigate('contact')"><i class="fas fa-address-book"></i><span>Contact</span></a>
+  <div class="sticky icon-bar">
+    <a href="#" class="icon-bar__link" @click="navigate('home')"><i class="fa fa-fw fa-home"></i><span>Home</span></a>
+    <a href="#" class="icon-bar__link" @click="navigate('recipe')"><i class="fas fa-hamburger"></i><span>Recipe</span></a>
+    <a href="#" class="icon-bar__link" @click="navigate('contact')"><i class="fas fa-address-book"></i><span>Contact</span></a>
   </div>
 </template>
 <script>

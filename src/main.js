@@ -21,7 +21,7 @@ import './components/scss/style.scss'
 
 export const EventBus = new Vue();
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 Vue.use(VueRouter);
 const router = new VueRouter({ routes, mode: 'abstract' });
 

@@ -1,21 +1,16 @@
 <template>
-  <div class="container p-4">
-    <div class="heading float-left">
-      <h1 class="float-left">Recipe page</h1>
-    </div>
-    <div class="createRecipe float-right">
-      <button type="button" class="btn btn-primary float-right" @click="createRecipe">create</button>
+  <div class="container">
+    <div class="create">
+      <button type="button" class="create__button" @click="createRecipe"><i class="fas fa-plus mr-2"></i>create</button>
       <modal-component v-if="isOpen"  :read-only-mode="readOnly" :edit-mode="editMode" :recipe-lists="editRecipe"></modal-component>
     </div>
 
-    <div class="row col-sm-12">
-      <input
-          class="search"
+    <div class="search">
+      <input class="search__input"
           type="text"
           placeholder="Search"
           aria-label="Search"
-          v-model="search"
-      >
+          v-model="search">
     </div>
 
     <card-component :cards-info="filteredList"></card-component>
@@ -50,6 +45,10 @@
          this.editMode = true;
          this.readOnly = false;
       });
+      EventBus.$on('delete', (index) => {
+       recipeDetailsStore.state.recipesList.splice(index ,1);
+       this.toggleModal();
+      });
     },
     data() {
       return {
@@ -66,9 +65,11 @@
         this.isOpen = recipeDetailsStore.showModal();
       },
       editDetails: function (index) {
-        this.editRecipe = recipeDetailsStore.state.recipesList[index];
+        this.editRecipe = this.filteredList[index];
       },
       createRecipe: function () {
+        this.editMode = true;
+        this.readOnly = false;
         this.editRecipe = {};
         this.toggleModal();
       }

@@ -19,11 +19,10 @@
   -moz-transition: font-size 0.5s;
   -o-transition: font-size 0.5s;
   transition: font-size 0.5s;
-}
 
-a:hover{
-  color: white;
-  font-size: 38px;
+  &__link{
+    font-size: 38px;
+  }
 }
 
 .icon-bar a:hover {
@@ -35,3 +34,4 @@ a:hover{
     display: none;
   }
 }
+

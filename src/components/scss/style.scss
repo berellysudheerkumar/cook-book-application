@@ -4,8 +4,11 @@
 */
 
 @import "variables";
-@import 'src/components/main/Main';
-@import "src/components/recipes/Recipe";
-@import "src/components/menu-bar/Menu";
-@import "src/components/recipes/cards/Card";
-@import "src/components/recipes/modal/Modal";
+@import 'src/components/main/main';
+@import "src/components/recipes/recipe";
+@import "src/components/menu-bar/menu";
+@import "src/components/recipes/cards/card";
+@import "src/components/recipes/modal/modal";
+@import "src/components/home/home";
+@import "src/components/scss/global";
+

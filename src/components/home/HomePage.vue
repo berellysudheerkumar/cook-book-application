@@ -1,5 +1,5 @@
 <template>
-  <div class="container p-4">
+  <div class="home container p-4">
     <h1>Home page</h1>
     <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       Integer eu vulputate leo. Pellentesque mauris erat, faucibus sed libero eu,
