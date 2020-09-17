@@ -12,7 +12,12 @@ npm run serve
 
 cook book application designed in such a way that you can re use components that you want , each and every component is independent and can be used in other components
 
-It uses Webpack + babel to transpile and build the application,  also load different components
+It uses following feature :
+
+ Webpack + babel to transpile and build the application,  also load different components
+ 
+ SCSS for styling
+ 
 
 #list of components -
 
