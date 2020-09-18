@@ -27,7 +27,8 @@
             </div>
           </div>
           <div v-if="editMode">
-            <h1>Create a Recipe</h1>
+            <h1 v-if="recipe.name === undefined"> Create a Recipe</h1>
+            <h1 v-else>Edit a Recipe</h1>
             <div class="form__group field">
               <input type="input"
                      class="form__field"
