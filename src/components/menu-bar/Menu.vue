@@ -1,8 +1,10 @@
 <template>
-  <div class="sticky icon-bar">
-    <a href="#" class="icon-bar__link" @click="navigate('home')"><i class="fa fa-fw fa-home"></i><span>Home</span></a>
-    <a href="#" class="icon-bar__link" @click="navigate('recipe')"><i class="fas fa-hamburger"></i><span>Recipe</span></a>
-    <a href="#" class="icon-bar__link" @click="navigate('contact')"><i class="fas fa-address-book"></i><span>Contact</span></a>
+  <div class="iconBar">
+    <a href="#" @click="navigate('home')"><i class="fa fa-home"></i></a>
+    <a href="#" @click="navigate('recipe')"><i class="fas fa-hamburger"></i></a>
+    <a href="#" @click="navigate('contact')"><i class="fas fa-address-book"></i></a>
+    <a href="#"><i class="fa fa-globe"></i></a>
+    <a href="#"><i class="fa fa-trash"></i></a>
   </div>
 </template>
 <script>
@@ -13,6 +15,7 @@
     },
     methods:{
       navigate : function(page) {
+        console.log("called");
         switch (page) {
           case "home":
             this.$router.push('/step-one');

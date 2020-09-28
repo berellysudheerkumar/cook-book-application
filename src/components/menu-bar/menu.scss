@@ -1,37 +1,23 @@
 
-.icon-bar {
-  width: 100%;
-  background-color: black;
-  overflow: auto;
-  line-height: 36px;
-  -webkit-box-shadow: 5px 5px 15px 5px #000000;
-  box-shadow: 2px 2px 10px 2px #000000;
-}
-
-.icon-bar a {
+.iconBar {
+  display: inline-grid;
   float: left;
-  width: 33.33%;
+  background-color: #303030;
+}
+
+.iconBar a {
+  display: block;
   text-align: center;
-  padding: 12px 0;
+  padding: 15px;
+  transition: all 0.5s ease;
   color: white;
-  font-size: 36px;
-  webkit-transition: font-size 0.5s;
-  -moz-transition: font-size 0.5s;
-  -o-transition: font-size 0.5s;
-  transition: font-size 0.5s;
-
-  &__link{
-    font-size: 38px;
-  }
+  font-size: 35px;
 }
 
-.icon-bar a:hover {
-  color: white;
-  text-decoration: none;
-}
-@media screen and (max-width: 725px) {
-  a > span {
-    display: none;
-  }
+.iconBar a:hover {
+  background-color: #006346;
 }
 
+.active {
+  background-color: #008c62;
+}
